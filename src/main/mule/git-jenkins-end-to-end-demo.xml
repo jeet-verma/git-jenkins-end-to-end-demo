@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c9bc44c7-5861-43e9-a646-e08923f97c92" basePath="/api">
+		<http:listener-connection host="0.0.0.0" port="8081"/>
+	</http:listener-config>
+	<flow name="git-jenkins-end-to-end-demoFlow" doc:id="bd59fe16-ab8c-4fa7-b27b-c8925e41ecca" >
+		<http:listener doc:name="Listener" doc:id="afbc4116-3b9e-4cd0-82c6-2755ba54d607" config-ref="HTTP_Listener_config" path="/git-jenkins"/>
+		<set-payload value="#[&quot;Hello&quot; ++ attributes.headers['name'] ++ &quot;this is git-jenkins learning project. Thanks&quot;]" doc:name="Set Payload" doc:id="2700e249-7fb4-4c3f-a555-8975e84d82d5" />
+		<logger level="INFO" doc:name="Logger" doc:id="aa5eee37-8002-4661-8c83-b939f5ab9988" message="#[payload]"/>
+	</flow>
+</mule>
