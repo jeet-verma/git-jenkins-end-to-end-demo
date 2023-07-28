@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('build') { 
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+    stage('Deploy Standalone') { 
+      steps {
+        sh 'mvn deploy -P standalone' -Dmule.home=/opt/mule
+      }
+    }
+  }
+}
