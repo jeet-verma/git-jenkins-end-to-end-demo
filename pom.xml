@@ -18,18 +18,18 @@
 		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
 	</properties>
 	<distributionManagement>
-       <repository>
-         <id>internal.repo</id>
-         <name>Release</name>
-         <url>file://D:/localRepo</url>
-		 <layout>default</layout>
-       </repository>
-	   <snapshotRepository>
-		<id>internal.repo</id>
-		<name>Snapshot</name>
-		<url>file://D:/localRepo</url>
-		<layout>default</layout>
-    </snapshotRepository>
+		<repository>
+			<id>internal.repo</id>
+			<name>Release</name>
+			<url>file://D:/localRepo</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<id>internal.repo</id>
+			<name>Snapshot</name>
+			<url>file://D:/localRepo</url>
+			<layout>default</layout>
+		</snapshotRepository>
 	</distributionManagement>
 	<build>
 		<plugins>
@@ -87,6 +87,13 @@
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.2</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mycompany</groupId>
+			<artifactId>local-domain</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<classifier>mule-domain</classifier>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
