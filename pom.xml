@@ -16,7 +16,20 @@
 		<app.runtime>4.4.0-20220824</app.runtime>
 		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
 	</properties>
-
+	<distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Release</name>
+         <url>file://D:/localRepo</url>
+		 <layout>default</layout>
+       </repository>
+	   <snapshotRepository>
+		<id>internal.repo</id>
+		<name>Snapshot</name>
+		<url>file://D:/localRepo</url>
+		<layout>default</layout>
+    </snapshotRepository>
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
