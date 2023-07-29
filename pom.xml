@@ -98,6 +98,11 @@
 	</dependencies>
 
 	<repositories>
+		 <repository>
+			<id>my-repo</id>
+			<name>My Repository</name>
+			<url>file://C:/Users/Jeet/.m2/repository</url>
+		</repository>
 		<repository>
 			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange</name>
